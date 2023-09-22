@@ -135,44 +135,18 @@ int main(int argc, char *argv[])
 
             }else if(n_plays > 1){
               if(n_plays == 3){
-                if(sum_player1 % 2 == 0){
-                  if(sum_player1 == 10){
-                    if(digito6 == 1){
-                      num = 8;
-                    }else{
-                      num = 6;
-                    }
-                  }else {
-                    num = sum_player1 / 2;
-                  }
-                }else{
-
-                }
-              }
-
-              if(n_plays == 5){                
-                if(sum_player2 == 7 && digito8 == 0){
-                  num= 8;
-                }else if(sum_player2 == 9 && digito6 == 0){
-                  num = 6;
-                }
-                else if(sum_player2 == 11 && digito4 == 0){
-                  num = 4;
-                }
-                else if(sum_player2 == 13 && digito2 == 0){
-                  num = 2;
-                }
-                
-                if((digito1 == 1 && digito4 == 1 && digito9 == 1) || (digito1 == 1 && digito3 == 1 && digito8 == 1)){
-                  num = 7;
-                }else if(digito1 == 1 && digito6 == 1 && digito7 == 1){
-                  num = 3;
-                }else{
-                  num = 1;
-                }
-                
-                
-
+                // int n = 10 - (sum_player2 - 5);
+                // int digit = 0;
+                // int potencia = pow(10, 9-n);
+                // if(n>0){
+                //   digit = (player_count / potencia) % 10;
+                // }
+                // cout<<"\nN: "<<n<<endl;
+                // cout<<"Digit: "<<digit<<endl;
+                // cout<<"Potencia: "<<potencia<<endl;
+                // if(digit == 0){
+                //   num = n;
+                // }
               }
               
             }  
