@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	std::cout << "\x1B[m";             // Resetear color a valor por defecto 
 
   srand(time(NULL));
-	int turno = 1, intentos = 1, max_intentos = 9, player = 1, num=10, winner=3, player_count = 0, state_game = 0, random = 0, n_plays = 0;
+	int turno = 1, intentos = 1, max_intentos = 9, player = 1, num=10, winner=3, player_count = 0, state_game = 0, random = 0, n_plays = 0, sum_player1 = 0, sum_player2 = 0;
   char icon = 'x';
   
   
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 
       for(turno; turno<=max_intentos; turno++) {  
         cout<<"\n\n*****El juego ha empezado !!!****"<<"\n\n";
-        system("clear");
+        // system("clear");
 
         for(int i=1; i<=9; i++){  
           int exp = 9-i, potencia_ten;
@@ -102,6 +102,17 @@ int main(int argc, char *argv[])
             player = 1;
         }
 
+        int digito1 =  (player_count / 100000000) % 10;
+        int digito2 =  (player_count / 10000000) % 10;
+        int digito3 =  (player_count / 1000000) % 10;
+        int digito4 =  (player_count / 100000) % 10;
+        int digito5 =  (player_count / 10000) % 10;
+        int digito6 =  (player_count / 1000) % 10;
+        int digito7 =  (player_count / 100) % 10;
+        int digito8 =  (player_count / 10) % 10;
+        int digito9 =  (player_count / 1) % 10;
+
+
         if(state_game == 1){
           cout<<"\n\nEs el turno del jugador: "<<player<<"\n\n"; cout<<"Selecciona el numero de las casillas disponibles: ";cin>>num;    
         } else if(state_game == 2){
@@ -115,49 +126,58 @@ int main(int argc, char *argv[])
         } else if(state_game == 4){
           if(player == 1){
             cout<<"\n\nEs el turno del jugador: "<<player<<"\n\n"; cout<<"Selecciona el numero de las casillas disponibles: ";cin>>num;    
+            sum_player1 += num;
           }else if(player == 2){
             if(n_plays == 1){
-              if(num == 1 || num == 3 || num == 7 || num == 9){
+              if(num != 5){
                 num=5;
-              }
-            }else if(n_plays > 1){
-              int digito1 =  (player_count / 100000000) % 10;
-              int digito2 =  (player_count / 10000000) % 10;
-              int digito3 =  (player_count / 1000000) % 10;
-              int digito4 =  (player_count / 100000) % 10;
-              int digito5 =  (player_count / 10000) % 10;
-              int digito6 =  (player_count / 1000) % 10;
-              int digito7 =  (player_count / 100) % 10;
-              int digito8 =  (player_count / 10) % 10;
-              int digito9 =  (player_count / 1) % 10;
+              }             
 
+            }else if(n_plays > 1){
               if(n_plays == 3){
-                if(digito1 == 1 || digito9 == 1 || digito3 == 1 || digito7 == 1){
-                  if((digito9 == 1 && digito1 == 1) || (digito3 == 1 && digito7 == 1)){
-                    num = 8;
+                if(sum_player1 % 2 == 0){
+                  if(sum_player1 == 10){
+                    if(digito6 == 1){
+                      num = 8;
+                    }else{
+                      num = 6;
+                    }
+                  }else {
+                    num = sum_player1 / 2;
                   }
+                }else{
+
                 }
-              }else if(n_plays == 5){
-                if((digito1 == 1 && digito9 == 1 && digito2 == 0) || (digito3 == 1 && digito7 == 1 && digito2 == 0)){
-                  num = 2;
-                }else if(digito1 == 1){
-                  num = 3;
-                }else {
-                  num = 1;
-                }
-              }else if(n_plays == 7){
-                if(digito1 == 1 && digito9 == 1 && digito2 == 1 && digito7 == 0){
-                  num = 7;
-                } else if(digito3 == 1 && digito7 == 1 && digito2 == 1 && digito9 == 0){
-                  num = 9;
-                } else if(digito1 == 1 && digito9 == 1 && digito2 == 1 && digito7 == 1){
-                  num = 4;
-                } else if(digito3 == 1 && digito7 == 1 && digito2 == 1 && digito9 == 1){
+              }
+
+              if(n_plays == 5){                
+                if(sum_player2 == 7 && digito8 == 0){
+                  num= 8;
+                }else if(sum_player2 == 9 && digito6 == 0){
                   num = 6;
                 }
+                else if(sum_player2 == 11 && digito4 == 0){
+                  num = 4;
+                }
+                else if(sum_player2 == 13 && digito2 == 0){
+                  num = 2;
+                }
+                
+                if((digito1 == 1 && digito4 == 1 && digito9 == 1) || (digito1 == 1 && digito3 == 1 && digito8 == 1)){
+                  num = 7;
+                }else if(digito1 == 1 && digito6 == 1 && digito7 == 1){
+                  num = 3;
+                }else{
+                  num = 1;
+                }
+                
+                
+
               }
               
             }  
+            sum_player2 += num;
+
           }
         }
 
