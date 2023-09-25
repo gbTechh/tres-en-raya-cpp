@@ -131,24 +131,368 @@ int main(int argc, char *argv[])
             if(n_plays == 1){
               if(num != 5){
                 num=5;
+              }else if(num == 5){
+                num = 7;
               }             
 
             }else if(n_plays > 1){
               if(n_plays == 3){
+                if(sum_player1 % 2 == 0){
+                  if(sum_player1 == 10){
+                    num = 9;
+                  }else {
+                    if(digito1 == 0 && digito3 == 0 && digito7 == 0 && digito9 == 0){
+                      num = sum_player1 - 5;
+                    }else{
+                      num = sum_player1 / 2;
+                    }                  
+                  }
+                }else{
+                  int hasPair1 = false;
+                  if(digito1 == 1 && digito2 == 1 && digito3 == 0){
+                    num = 3; hasPair1 = true;
+                  }else if(digito1 == 1 && digito2 == 0 && digito3 == 1){
+                    num = 2; hasPair1 = true;
+                  }else if(digito1 == 0 && digito2 == 1 && digito3 == 1){
+                    num = 1; hasPair1 = true;
+                  }else if(digito4 == 1 && digito5 == 1 && digito6 == 0){
+                    num = 6; hasPair1 = true;
+                  }else if(digito4 == 1 && digito5 == 0 && digito6 == 1){
+                    num = 5; hasPair1 = true;
+                  }else if(digito4 == 0 && digito5 == 1 && digito6 == 1){
+                    num = 4; hasPair1 = true;
+                  }else if(digito7 == 0 && digito8 == 1 && digito9 == 1){
+                    num = 7; hasPair1 = true;
+                  }else if(digito7 == 1 && digito8 == 0 && digito9 == 1){
+                    num = 8; hasPair1 = true;
+                  }else if(digito7 == 1 && digito8 == 1 && digito9 == 0){
+                    num = 9; hasPair1 = true;
+                  }else if(digito1 == 0 && digito4 == 1 && digito7 == 1){
+                    num = 7; hasPair1 = true;
+                  }else if(digito1 == 1 && digito4 == 0 && digito7 == 1){
+                    num = 4; hasPair1 = true;
+                  }else if(digito1 == 1 && digito4 == 1 && digito7 == 0){
+                    num = 7; hasPair1 = true;
+                  }else if(digito2 == 1 && digito5 == 1 && digito8 == 0){
+                    num = 8; hasPair1 = true;
+                  }else if(digito2 == 1 && digito5 == 0 && digito8 == 1){
+                    num = 5; hasPair1 = true;
+                  }else if(digito2 == 0 && digito5 == 1 && digito8 == 1){
+                    num = 2; hasPair1 = true;
+                  }else if(digito3 == 0 && digito6 == 1 && digito9 == 1){
+                    num = 3; hasPair1 = true;
+                  }else if(digito3 == 1 && digito6 == 0 && digito9 == 1){
+                    num = 6; hasPair1 = true;
+                  }else if(digito3 == 1 && digito6 == 1 && digito9 == 0){
+                    num = 9; hasPair1 = true;
+                  }else if(digito1 == 1 && digito5 == 1 && digito9 == 0){
+                    num = 9; hasPair1 = true;
+                  }else if(digito1 == 1 && digito5 == 0 && digito9 == 1){
+                    num = 5; hasPair1 = true;
+                  }else if(digito1 == 0 && digito5 == 1 && digito9 == 1){
+                    num = 1; hasPair1 = true;
+                  }else if(digito3 == 0 && digito5 == 1 && digito7 == 1){
+                    num = 3; hasPair1 = true;
+                  }else if(digito3 == 1 && digito5 == 0 && digito7 == 1){
+                    num = 5; hasPair1 = true;
+                  }else if(digito3 == 1 && digito5 == 1 && digito7 == 0){
+                    num = 7; hasPair1 = true;
+                  }  
+                  if(!hasPair1){
+                    if(digito1 == 1 && digito6 == 1){
+                      num = 3;
+                    }else if(digito1 == 1 && digito8 == 1){
+                      num = 7;
+                    }else if(digito3 == 1 && digito8 == 1){
+                      num = 9;
+                    }else if(digito3 == 1 && digito4 == 1){
+                      num = 1;
+                    }else if(digito9 == 1 && digito2 == 1){
+                      num = 3;
+                    }else if(digito9 == 1 && digito4 == 1){
+                      num = 7;
+                    }else if(digito7 == 1 && digito2 == 1){
+                      num = 1;
+                    }else if(digito7 == 1 && digito4 == 1){
+                      num = 9;
+                    }
+                  }
+                }
+              }
+              if(n_plays == 5){
                 // int n = 10 - (sum_player2 - 5);
                 // int digit = 0;
                 // int potencia = pow(10, 9-n);
                 // if(n>0){
                 //   digit = (player_count / potencia) % 10;
                 // }
-                // cout<<"\nN: "<<n<<endl;
-                // cout<<"Digit: "<<digit<<endl;
-                // cout<<"Potencia: "<<potencia<<endl;
+              
                 // if(digit == 0){
                 //   num = n;
+                // }else if(digit == 1){
+                //   if(digito1 == 1 && digito2 == 1 && digito3 == 0){
+                //     num = 3;
+                //   }else if(digito1 == 1 && digito3 == 1 && digito2 == 0){
+                //     num = 2;
+                //   } else if(digito1 == 1 && digito4 == 1 && digito7 == 0){
+                //     num = 7;
+                //   } else if(digito1 == 1 && digito7 == 1 && digito4 == 0){
+                //     num = 4;
+                //   } else if(digito2 == 1 && digito3 == 1 && digito1 == 0){
+                //     num = 1;
+                //   } else if(digito3 == 1 && digito6 == 1 && digito9 == 0){
+                //     num = 9;
+                //   } else if(digito3 == 1 && digito9 == 1 && digito6 == 0){
+                //     num = 6;
+                //   } else if(digito4 == 1 && digito7 == 1 && digito1 == 0){
+                //     num = 1;
+                //   } else if(digito6 == 1 && digito9 == 1 && digito3 == 0){
+                //     num = 3;
+                //   } else if(digito1 == 1 && digito2 == 1 && digito3 == 0){
+                //     num = 3;
+                //   } else {
+                //     for (int i = 1; i<= 9; i++){
+                //       int potencia = pow(10, 9-i);
+                //       int digit = (player_count / potencia) % 10;
+                //       if(digit == 0){
+                //         num = i;
+                //         break;
+                //       }
+                //     }
+                //   }
                 // }
-              }
-              
+                bool hasPair1 = false, hasPair2 = false;
+                
+                if(digito1 == 2 && digito2 == 2 && digito3 == 0){
+                  num = 3; hasPair2 = true;
+                }else if(digito1 == 2 && digito2 == 0 && digito3 == 2){
+                  num = 2; hasPair2 = true;
+                }else if(digito1 == 0 && digito2 == 2 && digito3 == 2){
+                  num = 1; hasPair2 = true;
+                }else if(digito4 == 2 && digito5 == 2 && digito6 == 0){
+                  num = 6; hasPair2 = true;
+                }else if(digito4 == 2 && digito5 == 0 && digito6 == 2){
+                  num = 5; hasPair2 = true;
+                }else if(digito4 == 0 && digito5 == 2 && digito6 == 2){
+                  num = 4; hasPair2 = true;
+                }else if(digito7 == 0 && digito8 == 2 && digito9 == 2){
+                  num = 7; hasPair2 = true;
+                }else if(digito7 == 2 && digito8 == 0 && digito9 == 2){
+                  num = 8; hasPair2 = true;
+                }else if(digito7 == 2 && digito8 == 2 && digito9 == 0){
+                  num = 9; hasPair2 = true;
+                }else if(digito1 == 0 && digito4 == 2 && digito7 == 2){
+                  num = 7; hasPair2 = true;
+                }else if(digito1 == 2 && digito4 == 0 && digito7 == 2){
+                  num = 4; hasPair2 = true;
+                }else if(digito1 == 2 && digito4 == 2 && digito7 == 0){
+                  num = 7; hasPair2 = true;
+                }else if(digito2 == 2 && digito5 == 2 && digito8 == 0){
+                  num = 8; hasPair2 = true;
+                }else if(digito2 == 2 && digito5 == 0 && digito8 == 2){
+                  num = 5; hasPair2 = true;
+                }else if(digito2 == 0 && digito5 == 2 && digito8 == 2){
+                  num = 2; hasPair2 = true;
+                }else if(digito3 == 0 && digito6 == 2 && digito9 == 2){
+                  num = 3; hasPair2 = true;
+                }else if(digito3 == 2 && digito6 == 0 && digito9 == 2){
+                  num = 6; hasPair2 = true;
+                }else if(digito3 == 2 && digito6 == 2 && digito9 == 0){
+                  num = 9; hasPair2 = true;
+                }else if(digito1 == 2 && digito5 == 2 && digito9 == 0){
+                  num = 9; hasPair2 = true;
+                }else if(digito1 == 2 && digito5 == 0 && digito9 == 2){
+                  num = 5; hasPair2 = true;
+                }else if(digito1 == 0 && digito5 == 2 && digito9 == 2){
+                  num = 1; hasPair2 = true;
+                }else if(digito3 == 0 && digito5 == 2 && digito7 == 2){
+                  num = 3; hasPair2 = true;
+                }else if(digito3 == 2 && digito5 == 0 && digito7 == 2){
+                  num = 5; hasPair2 = true;
+                }else if(digito3 == 2 && digito5 == 2 && digito7 == 0){
+                  num = 7; hasPair2 = true;
+                }
+                
+                if(!hasPair2){
+                  if(digito1 == 1 && digito2 == 1 && digito3 == 0){
+                    num = 3; hasPair1 = true;
+                  }else if(digito1 == 1 && digito2 == 0 && digito3 == 1){
+                    num = 2; hasPair1 = true;
+                  }else if(digito1 == 0 && digito2 == 1 && digito3 == 1){
+                    num = 1; hasPair1 = true;
+                  }else if(digito4 == 1 && digito5 == 1 && digito6 == 0){
+                    num = 6; hasPair1 = true;
+                  }else if(digito4 == 1 && digito5 == 0 && digito6 == 1){
+                    num = 5; hasPair1 = true;
+                  }else if(digito4 == 0 && digito5 == 1 && digito6 == 1){
+                    num = 4; hasPair1 = true;
+                  }else if(digito7 == 0 && digito8 == 1 && digito9 == 1){
+                    num = 7; hasPair1 = true;
+                  }else if(digito7 == 1 && digito8 == 0 && digito9 == 1){
+                    num = 8; hasPair1 = true;
+                  }else if(digito7 == 1 && digito8 == 1 && digito9 == 0){
+                    num = 9; hasPair1 = true;
+                  }else if(digito1 == 0 && digito4 == 1 && digito7 == 1){
+                    num = 7; hasPair1 = true;
+                  }else if(digito1 == 1 && digito4 == 0 && digito7 == 1){
+                    num = 4; hasPair1 = true;
+                  }else if(digito1 == 1 && digito4 == 1 && digito7 == 0){
+                    num = 7; hasPair1 = true;
+                  }else if(digito2 == 1 && digito5 == 1 && digito8 == 0){
+                    num = 8; hasPair1 = true;
+                  }else if(digito2 == 1 && digito5 == 0 && digito8 == 1){
+                    num = 5; hasPair1 = true;
+                  }else if(digito2 == 0 && digito5 == 1 && digito8 == 1){
+                    num = 2; hasPair1 = true;
+                  }else if(digito3 == 0 && digito6 == 1 && digito9 == 1){
+                    num = 3; hasPair1 = true;
+                  }else if(digito3 == 1 && digito6 == 0 && digito9 == 1){
+                    num = 6; hasPair1 = true;
+                  }else if(digito3 == 1 && digito6 == 1 && digito9 == 0){
+                    num = 9; hasPair1 = true;
+                  }else if(digito1 == 1 && digito5 == 1 && digito9 == 0){
+                    num = 9; hasPair1 = true;
+                  }else if(digito1 == 1 && digito5 == 0 && digito9 == 1){
+                    num = 5; hasPair1 = true;
+                  }else if(digito1 == 0 && digito5 == 1 && digito9 == 1){
+                    num = 1; hasPair1 = true;
+                  }else if(digito3 == 0 && digito5 == 1 && digito7 == 1){
+                    num = 3; hasPair1 = true;
+                  }else if(digito3 == 1 && digito5 == 0 && digito7 == 1){
+                    num = 5; hasPair1 = true;
+                  }else if(digito3 == 1 && digito5 == 1 && digito7 == 0){
+                    num = 7; hasPair1 = true;
+                  }
+                }
+                if(!hasPair1 && !hasPair2){
+                  for (int i = 1; i<= 9; i++){
+                    int potencia = pow(10, 9-i);
+                    int digit = (player_count / potencia) % 10;
+                    if(digit == 0){
+                      num = i;
+                      break;
+                    }
+                  }                  
+                }
+              }   
+              if(n_plays == 7){                
+                int n = 10 - (sum_player2 - 5);
+                int digit = 0;
+                int potencia = pow(10, 9-n);
+                bool hasPair1 = false, hasPair2 = false;
+                
+                if(digito1 == 2 && digito2 == 2 && digito3 == 0){
+                  num = 3; hasPair2 = true;
+                }else if(digito1 == 2 && digito2 == 0 && digito3 == 2){
+                  num = 2; hasPair2 = true;
+                }else if(digito1 == 0 && digito2 == 2 && digito3 == 2){
+                  num = 1; hasPair2 = true;
+                }else if(digito4 == 2 && digito5 == 2 && digito6 == 0){
+                  num = 6; hasPair2 = true;
+                }else if(digito4 == 2 && digito5 == 0 && digito6 == 2){
+                  num = 5; hasPair2 = true;
+                }else if(digito4 == 0 && digito5 == 2 && digito6 == 2){
+                  num = 4; hasPair2 = true;
+                }else if(digito7 == 0 && digito8 == 2 && digito9 == 2){
+                  num = 7; hasPair2 = true;
+                }else if(digito7 == 2 && digito8 == 0 && digito9 == 2){
+                  num = 8; hasPair2 = true;
+                }else if(digito7 == 2 && digito8 == 2 && digito9 == 0){
+                  num = 9; hasPair2 = true;
+                }else if(digito1 == 0 && digito4 == 2 && digito7 == 2){
+                  num = 7; hasPair2 = true;
+                }else if(digito1 == 2 && digito4 == 0 && digito7 == 2){
+                  num = 4; hasPair2 = true;
+                }else if(digito1 == 2 && digito4 == 2 && digito7 == 0){
+                  num = 7; hasPair2 = true;
+                }else if(digito2 == 2 && digito5 == 2 && digito8 == 0){
+                  num = 8; hasPair2 = true;
+                }else if(digito2 == 2 && digito5 == 0 && digito8 == 2){
+                  num = 5; hasPair2 = true;
+                }else if(digito2 == 0 && digito5 == 2 && digito8 == 2){
+                  num = 2; hasPair2 = true;
+                }else if(digito3 == 0 && digito6 == 2 && digito9 == 2){
+                  num = 3; hasPair2 = true;
+                }else if(digito3 == 2 && digito6 == 0 && digito9 == 2){
+                  num = 6; hasPair2 = true;
+                }else if(digito3 == 2 && digito6 == 2 && digito9 == 0){
+                  num = 9; hasPair2 = true;
+                }else if(digito1 == 2 && digito5 == 2 && digito9 == 0){
+                  num = 9; hasPair2 = true;
+                }else if(digito1 == 2 && digito5 == 0 && digito9 == 2){
+                  num = 5; hasPair2 = true;
+                }else if(digito1 == 0 && digito5 == 2 && digito9 == 2){
+                  num = 1; hasPair2 = true;
+                }else if(digito3 == 0 && digito5 == 2 && digito7 == 2){
+                  num = 3; hasPair2 = true;
+                }else if(digito3 == 2 && digito5 == 0 && digito7 == 2){
+                  num = 5; hasPair2 = true;
+                }else if(digito3 == 2 && digito5 == 2 && digito7 == 0){
+                  num = 7; hasPair2 = true;
+                }
+                
+                if(!hasPair2){
+                  if(digito1 == 1 && digito2 == 1 && digito3 == 0){
+                    num = 3; hasPair1 = true;
+                  }else if(digito1 == 1 && digito2 == 0 && digito3 == 1){
+                    num = 2; hasPair1 = true;
+                  }else if(digito1 == 0 && digito2 == 1 && digito3 == 1){
+                    num = 1; hasPair1 = true;
+                  }else if(digito4 == 1 && digito5 == 1 && digito6 == 0){
+                    num = 6; hasPair1 = true;
+                  }else if(digito4 == 1 && digito5 == 0 && digito6 == 1){
+                    num = 5; hasPair1 = true;
+                  }else if(digito4 == 0 && digito5 == 1 && digito6 == 1){
+                    num = 4; hasPair1 = true;
+                  }else if(digito7 == 0 && digito8 == 1 && digito9 == 1){
+                    num = 7; hasPair1 = true;
+                  }else if(digito7 == 1 && digito8 == 0 && digito9 == 1){
+                    num = 8; hasPair1 = true;
+                  }else if(digito7 == 1 && digito8 == 1 && digito9 == 0){
+                    num = 9; hasPair1 = true;
+                  }else if(digito1 == 0 && digito4 == 1 && digito7 == 1){
+                    num = 7; hasPair1 = true;
+                  }else if(digito1 == 1 && digito4 == 0 && digito7 == 1){
+                    num = 4; hasPair1 = true;
+                  }else if(digito1 == 1 && digito4 == 1 && digito7 == 0){
+                    num = 7; hasPair1 = true;
+                  }else if(digito2 == 1 && digito5 == 1 && digito8 == 0){
+                    num = 8; hasPair1 = true;
+                  }else if(digito2 == 1 && digito5 == 0 && digito8 == 1){
+                    num = 5; hasPair1 = true;
+                  }else if(digito2 == 0 && digito5 == 1 && digito8 == 1){
+                    num = 2; hasPair1 = true;
+                  }else if(digito3 == 0 && digito6 == 1 && digito9 == 1){
+                    num = 3; hasPair1 = true;
+                  }else if(digito3 == 1 && digito6 == 0 && digito9 == 1){
+                    num = 6; hasPair1 = true;
+                  }else if(digito3 == 1 && digito6 == 1 && digito9 == 0){
+                    num = 9; hasPair1 = true;
+                  }else if(digito1 == 1 && digito5 == 1 && digito9 == 0){
+                    num = 9; hasPair1 = true;
+                  }else if(digito1 == 1 && digito5 == 0 && digito9 == 1){
+                    num = 5; hasPair1 = true;
+                  }else if(digito1 == 0 && digito5 == 1 && digito9 == 1){
+                    num = 1; hasPair1 = true;
+                  }else if(digito3 == 0 && digito5 == 1 && digito7 == 1){
+                    num = 3; hasPair1 = true;
+                  }else if(digito3 == 1 && digito5 == 0 && digito7 == 1){
+                    num = 5; hasPair1 = true;
+                  }else if(digito3 == 1 && digito5 == 1 && digito7 == 0){
+                    num = 7; hasPair1 = true;
+                  }
+                }
+                if(!hasPair1 && !hasPair2){
+                  for (int i = 1; i<= 9; i++){
+                    int potencia = pow(10, 9-i);
+                    int digit = (player_count / potencia) % 10;
+                    if(digit == 0){
+                      num = i;
+                      break;
+                    }
+                  }                  
+                }
+              }           
             }  
             sum_player2 += num;
 
